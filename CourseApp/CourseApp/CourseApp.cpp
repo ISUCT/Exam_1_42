@@ -3,27 +3,27 @@
 using namespace std;
 class ManPochta	
 {
-public:
+public: 
     string name;
     string adress;
     string city;
     string region;
     int index;
-    string s;
-    string a;
-    string b;
-    string c;
-    int d;
-    ManPochta() //конструктор
+    string NameChel;
+    string AdressChel;
+    string CityChel;
+    string RegionChel;
+    int IndexChel;
+    ManPochta(string NameChel, string AdressChel, string CityChel, string RegionChel, int IndexChel) //конструктор
     {
-        name = s;
-        adress = a;
-        city = b;
-        region = c;
-        index = d;
-    }
+        name = NameChel;
+        adress = AdressChel;
+        city = CityChel;
+        region = RegionChel;
+        index = IndexChel;
+    } 
 
-    void display()
+    void display() 
     {
         cout << "Name: "; cin >> name;
         cout << "Adress: "; cin >> adress;
@@ -31,11 +31,11 @@ public:
         cout << "Region: "; cin >> region;
         cout << "PostCode: "; cin >> index;
     }
-    ~ManPochta() {}; //деструктор 
+    ~ManPochta() {}; //деструктор
 };
 int main()
 {
-    ManPochta ManPochta;
+    ManPochta ManPochta("q","y","t","e",1); 
         ManPochta.display();
     return 0;
 };
