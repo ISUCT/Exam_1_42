@@ -3,10 +3,69 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
+using namespace std;
 
-int main()
+class Exam
 {
-		std::cout << "Exam" << std::endl;
+
+private:
+	int n, m;
+public:
+	Exam(int a, int b) {
+		n = a;
+		m = b;
+	}
+	void print()
+	{
+
+		setlocale(LC_ALL, "Rus");
+		int** p = new int*[n];
+		for (int i = 0; i < n; i++) {
+			p[i] = new int[m];
+		}
+
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++) {
+				p[i][j] = 1;
+			}
+
+		}
+		for (int i = 1; i < n - 1; i++)
+		{
+			for (int j = 1; j < m - 1; j++) {
+				p[i][j] = 0;
+			}
+
+		}
+
+		string s;
+		s = "*";
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (p[i][j] == 1) {
+					cout << s << ' ';
+				}
+				else {
+					cout << "  ";
+				}
+			}
+			cout << endl;
+		}
+
+		delete[]p;
+
+	}
+};
+int main() {
+	int a;
+	int b;
+	cin >> a >> b;
+	Exam qwert(a, b);
+	qwert.print();
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
