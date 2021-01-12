@@ -2,12 +2,36 @@
 //
 
 #include <iostream>
-#include <cmath>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+
+void writeStringToFile(string filename, string input)  // Конструктор с 2 параметрами 
+{
+	ofstream outfile(filename);
+
+	outfile << input << endl;
+
+	outfile.close();
+}
 
 int main()
 {
-		std::cout << "Exam" << std::endl;
+	std::cout << "Exam" << std::endl;
+	cout << "Input filename: ";
+	string fn;
+	getline(cin, fn);
+
+	cout << "Input string: ";
+	string inp;
+	getline(cin, inp);
+	cout << endl;
+	writeStringToFile(fn, inp); //Использование конструктора с 2 параметрами 
+	cout << "Writing complete";
+	return 0;
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
