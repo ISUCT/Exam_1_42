@@ -4,24 +4,26 @@ using namespace std;
 
 class Car
 {
-public:
+private:
     int distanse;
-    int howlong;
-    
+public:
     void start();
     void stop();
 
-    void drive()
+    int drive(int howlong)
     {
-        cout << "Enter how long drive?" << endl;
-        cin >> howlong;
+       
         distanse = howlong * 60;
-        cout << "distance = " << distanse;
+        return distanse;
     }
 };
 int main()
 {
     Car Toyota;
-    Toyota.drive();
+    int a;
+    cin >> a;
+    int c;
+    c= Toyota.drive(a);
+    cout << c << endl;
     return 0;
 }
