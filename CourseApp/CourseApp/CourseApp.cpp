@@ -1,21 +1,25 @@
-// CourseApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <cmath>
 
+class Table {
+public:
+	void T(int b, double x_s, double x_e, double x_step) {
+		for (double i = x_s; i <= x_e; i += x_step) {
+			std::cout << 1 + sin(pow(b, 3) + pow(i, 3)) << std::endl;
+		}
+	}
+};
+
+
 int main()
 {
-		std::cout << "Exam" << std::endl;
+	const double pi = 3.14159265358979323846;
+	Table T;
+	int b = 2;
+	double s = 0;
+	double e = 3 * pi;
+	double step = 0.1 * pi;
+	T.T(b, s,e,step);
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
