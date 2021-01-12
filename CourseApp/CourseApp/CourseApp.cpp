@@ -12,20 +12,25 @@ public:
     int payment;
     int hours;
 
-    Worker(string s, int a, int b, int c) //конструктор    
+    Worker(string s, int a, int c) //конструктор    
     {
         surname = s;
         experience = a;
-        payment = b;
         hours = c;
     }
 
+    void Paypayment()
+    {
+
+        cout << "Payment($): "; cin >>  payment;
+        
+    }
     void display()
     {
         cout << "Surname: " << surname << endl;
         cout << "Experience: " << experience << " years" << endl;
-        cout << "Hourly payment: " << payment << "$" << endl;
         cout << "Number of hours worked: " << hours  << endl;
+        Paypayment();
         cout << "-----------------------" << endl;
     }
     ~Worker() {}; //деструктор 
@@ -34,11 +39,11 @@ public:
 
 int main()
 {
-    Worker first ("Malakhov", 3, 1000, 6);
-    Worker second ("Morgenstern", 4, 15, 8);
-    Worker third("Smirnov", 11, 500, 7);
+    Worker first ("Malakhov", 3, 6);         //создаю переменную класса
+    Worker second ("Morgenstern", 4, 8);
+    Worker third("Smirnov", 11, 7);
  
-    first.display();
+    first.display();     // использую функцию дисплей
     second.display();
     third.display();
   
