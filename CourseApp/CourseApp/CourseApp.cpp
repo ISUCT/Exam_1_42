@@ -7,8 +7,11 @@ class Car
 private:
     int distanse;
 public:
-    void start();
-    void stop();
+    void display() {
+        cout << distanse << endl;
+    }
+    void start() {};
+    void stop() {};
 
     int drive(int howlong)
     {
@@ -24,6 +27,6 @@ int main()
     cin >> a;
     int c;
     c= Toyota.drive(a);
-    cout << c << endl;
+    Toyota.display();
     return 0;
 }
